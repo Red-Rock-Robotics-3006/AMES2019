@@ -60,6 +60,17 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    /*
+    Shooter Right: Victor ID: 4
+    Shooter Left: Victor ID: 5
+
+    PDP (Power Distribution Panel): ID: 20
+
+    Front Left Motor: Talon ID: 0
+    Front Right Motor: Talon ID: 2
+    Back Left Motor: Victor ID: 1
+    Back Right Motor: Victor ID: 3
+    */
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
@@ -71,7 +82,6 @@ public class Robot extends TimedRobot {
     frontRight = new TalonSRX(2);
     backLeft = new VictorSPX(1);
     backRight = new VictorSPX(3);
-
     leftMotorControllers.add(frontLeft);
     rightMotorControllers.add(frontRight);
     leftMotorControllers.add(backLeft);
@@ -80,7 +90,7 @@ public class Robot extends TimedRobot {
     driveTrain = new DriveTrain(leftMotorControllers, rightMotorControllers, maxSpeed);
     driver.setDriveTrain(driveTrain);
 
-    shooter = new Shooter(canID1, canID2, maxPower);
+    shooter = new Shooter(5, 4, maxPower);
     driver.setShooter(shooter);
   
     //Singleton should not allow manual object initalization. Must call init function
