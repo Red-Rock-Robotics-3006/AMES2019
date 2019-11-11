@@ -13,7 +13,7 @@ public class Shooter extends Mechanism
     }
     public void Fire()
     {
-        super.setVictorSpecific(canID1, maxPower);
-        super.setVictorSpecific(canID2, maxPower * -1);
+        super.setVictorSpecific(canID1, maxPower * - 1 );
+        super.setVictorSpecific(canID2, maxPower);
     }
 }

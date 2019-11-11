@@ -20,7 +20,6 @@ public class DriveTrain
         //constructor for drivetrain
         this.leftMotorControllers = leftMotorControllers;
         this.rightMotorControllers = rightMotorControllers;
-       
 
         this.maxSpeed = maxSpeed; //max speed for any motor at any time
     }
@@ -29,7 +28,7 @@ public class DriveTrain
     {
         for(BaseMotorController l: this.leftMotorControllers)
         {
-            l.set(ControlMode.PercentOutput, leftMotorMove * -1 * maxSpeed);
+            l.set(ControlMode.PercentOutput, leftMotorMove * maxSpeed);
         }
 
         for(BaseMotorController r: this.rightMotorControllers)
@@ -37,6 +36,18 @@ public class DriveTrain
             r.set(ControlMode.PercentOutput, rightMotorMove * maxSpeed);
         }
        
+    }
+
+    public void turn(double leftTurn, double rightTurn)
+    {
+        for(BaseMotorController l: this.leftMotorControllers)
+        {
+            l.set(ControlMode.PercentOutput, leftTurn  * maxSpeed);
+        }
+        for(BaseMotorController r: this.rightMotorControllers)
+        {
+            r.set(ControlMode.PercentOutput, rightTurn * maxSpeed);
+        }
     }
 
     public void boost(double leftMotorMove, double rightMotorMove)

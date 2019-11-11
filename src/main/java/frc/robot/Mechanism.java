@@ -33,7 +33,7 @@ public class Mechanism
     }
     public void setVictorSpecific(int canID, double motorVal)
     {
-        mech_victor.get(canID).set(ControlMode.PercentOutput, motorVal);
+        mech_victor.get(used_can.indexOf(canID)).set(ControlMode.PercentOutput, motorVal);
     }
     
     public void stop()
