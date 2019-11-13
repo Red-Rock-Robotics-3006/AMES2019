@@ -38,17 +38,7 @@ public class DriveTrain
        
     }
 
-    public void turn(double leftTurn, double rightTurn)
-    {
-        for(BaseMotorController l: this.leftMotorControllers)
-        {
-            l.set(ControlMode.PercentOutput, leftTurn  * maxSpeed);
-        }
-        for(BaseMotorController r: this.rightMotorControllers)
-        {
-            r.set(ControlMode.PercentOutput, rightTurn * maxSpeed);
-        }
-    }
+   
 
     public void boost(double leftMotorMove, double rightMotorMove)
     {
