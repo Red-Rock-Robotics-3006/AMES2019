@@ -115,24 +115,7 @@ public class Controller {
 			}*/
 		}
 	
-	public void arcadeDrive1()
-	{
-		if(driveTrain != null)
-		{
-			double allMotorMove = joystick.getRawAxis(leftYAxis);
-			double allMotorTurn = joystick.getRawAxis(rightXAxis);
-			if(Math.abs(joystick.getRawAxis(leftYAxis)) > 0.3)
-			{
-				driveTrain.drive(allMotorMove, -allMotorMove);
-				
-			}
-		
-			/*else if(joystick.getRawAxis(rightXAxis) > 0.05)
-			{
-				driveTrain.turn(allMotorTurn, -allMotorTurn);
-			}*/
-		}
-	}
+	
 	
 
 	public void setMaxDriveSpeed(double val) {
